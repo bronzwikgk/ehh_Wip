@@ -2,7 +2,7 @@ let i = 0;
 nodeOut = {};
 console.log(i, nodeOut); i++;
 output = {};
-let entity = "toggle";
+let entity = "ehhContextMenu";
 var request = {
     'request' : {
         'localName': "get",
@@ -13,7 +13,14 @@ var request = {
         'nodeType': "get",
         'id': "get",
         "validity": "",
-        "attributes":""
+        "attributes": "",
+        "style": "",
+        "childNodes": "",
+        "CSSRuleSelector": "",
+        "children": "",
+        "dataset": "",
+        "classList": "",
+        
  },
     'options': {
         'values': true,
@@ -32,56 +39,51 @@ console.log(output);
 
 //this function takes a request [ entity | string ], and for each key in request processes it.
 function processRequest(entity, request, output, values) { //Entity to be part of Request Json
-    if (!response) { var response = new Map(); }
+    if (!response) { var response = {};}
 
     var eip = document.getElementsByTagName(entity)[0];
-   // var eip = document.querySelectorAll(entity)[0];
-    console.log(eip);
+    //var eip = document.querySelectorAll(entity)[0];
+   // console.log(eip);
     for (key in request.request) {
         //console.log(key);
         if (eip[key]) {
             if (values === true) {
                 if ( typeof eip[key] === 'object' || typeof eip[key] === 'function') {
 
-                   console.log("found Object in value", key, eip[key]);
+                    console.log("found Object in value", key, eip[key]);
+                    
                     var temp = iterationConductor(eip[key], "entries");
-                   // console.log("tempo>>>o", temp);
-                    //  console.log(response[key]);
-                    //response[key] = temp;
-                    response.set(key, temp);
-                    //  console.log("responsehere", response);
-                    //response.set(key, eip[key]);    
+                    response[key] = temp;
+                  
                 } else {
-                    // console.log(key, eip[key]);
-                    //response[key] = eip[key];
-                    response.set(key, eip[key]);
+                  //  console.log("found Something", key, eip[key]);
+                    response[key] = eip[key];
+                  
                 }
 
             } else {
-                // response[key] = eip[key];
-                response.set(key);
-
+                console.log("found Something here as well", key, eip[key]);
+                 response[key] = eip[key];
+            
             }
 
         }
     }
 
-
-    //console.log(response);
     return response;
 }
 
 function iterationConductor(entity, request, output, values, iteratorResponse) {
     sw = arguments.callee.name;
     if (!response) { var response = {}; } 
-  //  console.log(i, sw, entity, getEntityType(entity),typeof entity, entity.nodeType,entity.length); i++;
+ //  console.log(i, sw, entity, getEntityType(entity),typeof entity, entity.nodeType,entity.length); i++;
 
     if (entity) {
         if (typeof entity === 'object' && !entity.length) {
-        //    console.log("Object herehere",entity);
+           // console.log("Object herehere",entity);
             var response = iterateObject(entity);
         } else if (entity.length) {
-         //   console.log("Arrayhere");
+          //  console.log("Arrayhere");
             var response = iterateArr(entity,"entries");
         } else {
           //  console.log("unknownEntity",entity);
@@ -95,30 +97,29 @@ function iterationConductor(entity, request, output, values, iteratorResponse) {
 function iterateObject(entity, options, callback) {
     if (!response) { var response = {}; } 
     sw = arguments.callee.name;
-   // console.log(i, sw, entity, getEntityType(entity), entity.nodeType); i++;
+    console.log(i, sw, entity, getEntityType(entity), entity.nodeType); i++;
 
     for (let key in entity) {
         
         
         if (entity[key]) {
-            // response[key] = obj[key];
-          //  console.log(i, key, entity[key]); i++;
-            if (typeof entity[key] === 'object' || typeof entity[key] != 'function') {//In case we need to recurse
-            //    console.log("obj found >>", key,entity[key],"type" ,getEntityType(entity[key]),entity[key].nodeType,typeof entity[key]);
-                //iterateEntity(obj, obj[key], nodeOut);
+
+            if (entity.hasOwnProperty(key) || typeof entity[key] != 'function') {//In case we need to recurse
+               // console.log("obj found >>", key, entity[key], getEntityType(entity[key]), entity[key].nodeType, typeof entity[key]);
+                
                 response[key] = entity[key];
-            } else {
-                response[key] = entity[key];
+
                 // console.log(i, key, obj[key]); i++;
             }
         }
 //     
     }
-    console.log("response Returned",response);
+    console.log("response Returned from Iterate Object",response);
     return response;
 }
 
 function iterateArr(entity, output) { 
+
     if (!response) { var response = {} }
     sw = arguments.callee.name;
    // console.log(i, sw, entity, getEntityType(entity), typeof entity, entity.nodeType, entity.length); i++;
@@ -130,15 +131,20 @@ function iterateArr(entity, output) {
         }
     }
     
-   // console.log("responsefrom Arr",response);
+  // console.log("responsefrom Arr",response);
     return response;
 }
-
 
 function getElement(entity, output) {
     var eip = document.getElementsByTagName(entity)[0];
     var element = conductIteration(eip, output, entity, "find");
     // console.log(i,"element", element); i++
     return element;
+
+}
+
+//this is like a callback function to be called for Each element or Key
+//Get||Set||Update||Delete||Match|Find||
+function exeOnEachEntity() { 
 
 }

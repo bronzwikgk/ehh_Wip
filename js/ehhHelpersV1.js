@@ -101,12 +101,11 @@ function FindInAn2DArray(Array, column, item) {
             if (obj[key]) {
                 // response[key] = obj[key];
                 //console.log(i, key, obj[key]); i++;
-                if (obj.hasOwnProperty(key) || typeof obj[key] === 'object' || typeof obj[key] === 'function') {//In case we need to recurse
+                if (obj.hasOwnProperty(key) || typeof obj[key] != 'function' ) {//In case we need to recurse
                     // console.log("obj found >>", key, obj[key], getEntityType(obj[key]), obj[key].nodeType,typeof obj[key]);
                     //iterateEntity(obj, obj[key], nodeOut);
                     response[key] = obj[key];
-                } else {
-                    response[key] = obj[key];
+               
                     // console.log(i, key, obj[key]); i++;
                 }
             }
