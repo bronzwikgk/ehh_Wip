@@ -1,3 +1,4 @@
+//https://gist.github.com/justsml/529d0b1ddc5249095ff4b890aad5e801#easy-get-json-from-a-url
 //https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow#oauth-2.0-endpoints_1
 //This fetch Handles all kind of fetch Req
 //It results with a reposnse as request, currently aiming for JSON.
