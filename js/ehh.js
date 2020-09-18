@@ -76,7 +76,7 @@ function conductEvent(e) {
             // console.log(e.constructor.name, e.type, "captured", e.target.constructor.name);
              //createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
              e.preventDefault();
-             rightClick(e);    
+            // rightClick(e);    
          } 
      }
 }
