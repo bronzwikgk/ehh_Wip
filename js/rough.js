@@ -94,3 +94,86 @@ function iterateEntity(entity, options, callback) {  //{options : entries || Val
     console.log("iterating Entity", response);
     return response;
 }
+
+
+
+
+
+// Create new script element
+const script = document.createElement('script');
+script.src = '/path/to/js/file.js';
+
+// Append to the `head` element
+document.head.appendChild(script);
+
+
+// post new script element
+
+script.addEventListener('load', function () {
+    // The script is loaded completely
+    // Do something
+});
+
+// Append to the `head` element
+
+
+
+
+// Load a script from given `url`
+const loadScript = function (url) {
+    return new Promise(function (resolve, reject) {
+        const script = document.createElement('script');
+        script.src = url;
+
+        script.addEventListener('load', function () {
+            // The script is loaded completely
+            resolve(true);
+        });
+
+        document.head.appendChild(script);
+    });
+};
+
+// Perform all promises in the order
+const waterfall = function (promises) {
+    return promises.reduce(
+        function (p, c) {
+            // Waiting for `p` completed
+            return p.then(function () {
+                // and then `c`
+                return c().then(function (result) {
+                    return true;
+                });
+            });
+        },
+        // The initial value passed to the reduce method
+        Promise.resolve([])
+    );
+};
+
+
+async function fetchText() {
+
+    let response = await fetch('/readme.txt');
+
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+
+    if (response.status === 200) {
+        let data = await response.text();
+        // handle data
+    }
+}
+
+fetchText();
+
+
+async function fetchUrl() {
+    let url = '';
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
