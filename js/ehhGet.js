@@ -5,19 +5,20 @@ output = {};
 let entity = "h1";
 var entityKeysReq = {
     'request' : {
-    'localName': "",
-    'tagName': "",
-    'children':"",
-    'attributes': "",
-    'nodeName': "",
-    'name':"",
-    'nodeType':"",
-    'style': "",
-    'id': ""
-    }, 
+        'localName': "",
+        'childNodes': "",
+        'tagName': "",
+        'children': "",
+        'attributes': "",
+        'nodeName': "",
+        'name': "",
+        'nodeType': "",
+        'style': "",
+        'id': ""
+    },
     'options': {
         'values': true,
-        'ignore': ['object', 'function']
+        'ignore': ['function']
     }
 }
 
@@ -39,13 +40,12 @@ function getKeys(entity, entityKeysReq, output, values) {
     for(key in entityKeysReq.request){
 //console.log(key);
         if (eip[key]){
-
             if(values === true){
                // console.log(key, eip[key]);
                 response.set(key, eip[key]);
             } else {
                 response.set(key);
-         //       response[key];
+   
             }
             
         }
@@ -56,6 +56,11 @@ return response;
 }
 
 
+function getValues() { 
+
+
+
+}
 
 
 function getElement(entity, output) {
