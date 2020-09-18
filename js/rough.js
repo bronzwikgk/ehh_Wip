@@ -168,8 +168,7 @@ async function fetchText() {
 fetchText();
 
 
-async function fetchUrl() {
-    let url = '';
+async function fetchUrl(url) {
     try {
         let res = await fetch(url);
         return await res.json();

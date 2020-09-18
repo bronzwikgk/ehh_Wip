@@ -49,12 +49,12 @@
          */
         function oauth2SignIn() {
             // Google's OAuth 2.0 endpoint for requesting an access token
-            var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+            var url = 'https://accounts.google.com/o/oauth2/v2/auth'; //oauth2Endpoint
 
             // Create element to open OAuth 2.0 endpoint in new window.
             var form = document.createElement('form');
             form.setAttribute('method', 'GET'); // Send as a GET request.
-            form.setAttribute('action', oauth2Endpoint);
+            form.setAttribute('action', url);
 
             // Parameters to pass to OAuth 2.0 endpoint.
             var params = {
