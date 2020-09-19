@@ -5,7 +5,8 @@ function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
     var listeners = createListeners(this);
-
+    var token = getToken();
+    console.log("token",token);
     var fragmentString = window.location.hash.substring(1);
 
     console.log("fragmentString", fragmentString);
@@ -24,6 +25,30 @@ function OnLoad(e) {
 
 
 }
+
+
+// Returns the token from the URL hash
+function getToken() {
+    //substring(1) to remove the '#'
+    hash = parseParms(document.location.hash.substring(1));
+    return hash.access_token;
+}
+
+
+// Parses the URL parameters and returns an object
+function parseParms(str) {
+    var pieces = str.split("&"), data = {}, i, parts;
+    // process each query pair
+    for (i = 0; i < pieces.length; i++) {
+        parts = pieces[i].split("=");
+        if (parts.length < 2) {
+            parts.push("");
+        }
+        data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+    }
+    return data;
+}
+
 
 function createListeners(entity) {
    console.log(entity);
