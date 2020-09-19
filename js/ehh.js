@@ -7,8 +7,8 @@ function OnLoad(e) {
   //  var listeners = createListeners(this);
     var response = onLocationChange();
     console.log(response);
-    var token = getToken(response);
-    console.log(token);
+    var token = unbuildEndodedUri(response);
+    console.log("token",token);
 }
 
 
@@ -25,32 +25,6 @@ function onLocationChange(e) {
     } else { 
         console.log("no idea");
     }
-}
-
-
-// Returns the token from the URL hash
-function getToken() {
-    //substring(1) to remove the '#'
-    response = parseParms(document.location.hash.substring(1));
-    console.log(response);
-    return hash.access_token;
-}
-
-
-// Parses the URL parameters and returns an object
-function parseParms(str) {
-    var pieces = str.split("&"), data = {}, i, parts;
-    // process each query pair
-    for (i = 0; i < pieces.length; i++) {
-        parts = pieces[i].split("=");
-        if (parts.length < 2) {
-            parts.push("");
-            console.log(parts);
-        }
-        data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
-    }
-    console.log(data);
-    return data;
 }
 
 
