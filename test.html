@@ -8,6 +8,7 @@
        var YOUR_CLIENT_ID = '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com';
        var YOUR_REDIRECT_URI = 'https://bronzwikgk.github.io/ehh_Wip/';
        var fragmentString = location.hash.substring(1);
+       console.log("fragmentString", fragmentString);
         // Parse query string to see if page request is coming from OAuth 2.0 server.
         var params = {};
         var regex = /([^&=]+)=([^&]*)/g, m;
@@ -17,6 +18,7 @@
         if (Object.keys(params).length > 0) {
             localStorage.setItem('oauth2-test-params', JSON.stringify(params));
             if (params['state'] && params['state'] == 'try_sample_request') {
+                console.log("fragmentString", fragmentString);
                 trySampleRequest();
             }
         }
