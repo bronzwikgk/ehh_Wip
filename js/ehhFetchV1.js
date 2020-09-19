@@ -34,7 +34,7 @@ postRequest('http://example.com/api/v1/users', { user: 'Dan' })
 
 function postRequest(url, data) {
     return fetch(url, {
-        credentials: 'same-origin', // 'include', default: 'omit'
+        credentials: 'include', // 'include', default: 'omit'
         method: 'POST',             // 'GET', 'PUT', 'DELETE', etc.
         body: JSON.stringify(data), // Use correct payload (matching 'Content-Type')
         headers: { 'Content-Type': 'application/json' },

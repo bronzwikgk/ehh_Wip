@@ -5,7 +5,7 @@
 //Auth error response -
 //https://oauth2.example.com/callback#error=access_denied
 //https://www.oauth.com/oauth2-servers/single-page-apps/
-
+//https://developer.byu.edu/docs/consume-api/use-api/oauth-20/oauth-20-javascript-sample-code
 
 https://bronzwikgk.github.io/ehh_Wip/
 #state = try_sample_request
