@@ -6,7 +6,7 @@
 //https://oauth2.example.com/callback#error=access_denied
 //https://www.oauth.com/oauth2-servers/single-page-apps/
 //https://developer.byu.edu/docs/consume-api/use-api/oauth-20/oauth-20-javascript-sample-code
-
+//https://advancedweb.hu/how-to-use-async-functions-with-gapi-the-google-drive-client-and-the-file-picker/
 // https://bronzwikgk.github.io/ehh_Wip/
 // #state = try_sample_request
 //     & access_token=ya29.a0AfH6SMBGDaLCAc7Gee0rcPnuKweeUThNzAQyz7bq - A0gM141jOION9aXPo89PIDb7le1olhTUlff3bO2fiVJaHJn5iq3cfN - aj1WU3xC3Zzv8ZPnNNu6hPOzQDqRB0UyxJ5KqlTVDtb139fd2023kWrkPXQfedyUoCN9
