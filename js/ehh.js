@@ -7,6 +7,13 @@ function OnLoad(e) {
     var listeners = createListeners(this);
 }
 
+window.onloadeddata = handleHashChange;
+function handleHashChange(e) {
+    console.log(e.location);
+
+}
+
+
 window.addEventListener("hashchange", onhashchange);
 
 function onhashchange() { 
