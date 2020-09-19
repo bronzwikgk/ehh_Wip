@@ -1,4 +1,19 @@
 //https://stackoverflow.com/questions/9979172/difference-between-node-object-and-element-object#:~:text=5%20Answers&text=A%20node%20is%20the%20generic,such%20as%20document%20or%20document.&text=An%20element%20is%20one%20specific,%2C%20etc...).//
+//Basic idea being, building a tree from the Chosen Node,and fetching requested atrributes and paramaeters as per the request Json.
+//It takes an input live node using a document selector and iterates over it to build a Map/Json Object.
+//We create a flat array from this object to be stored in a google sheet [ tempo we can render a new windor tab /html ]
+//we should be able to read a Dom || create a JSOn || recreate the same HTML.
+//This will be back bone of the UI framework. while building a reponse few fetch query will be needed.
+// sample code.
+//
+//Major componenet being
+// Process entity, to handle the Input Request nested Json Object, with key as the requested Key and values being the function to be called at the end
+//of each node. These function can be rules
+//iteration Condutor, which simply sends an enity to it's current iterator.
+//iterate Array and Iterate Obj [ needs to be build with recuse and depth argument]
+//on Each Node kind of a function which calls the function /sw passed to it from the request Object
+
+
 let i = 0;
 nodeOut = {};
 console.log(i, nodeOut); i++;
