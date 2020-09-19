@@ -4,7 +4,6 @@
 //We create a flat array from this object to be stored in a google sheet [ tempo we can render a new windor tab /html ]
 //we should be able to read a Dom || create a JSOn || recreate the same HTML.
 //This will be back bone of the UI framework. while building a reponse few fetch query will be needed.
-// sample code.
 //
 //Major componenet being
 // Process entity, to handle the Input Request nested Json Object, with key as the requested Key and values being the function to be called at the end
