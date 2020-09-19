@@ -13,23 +13,16 @@
 
             // Parameters to pass to OAuth 2.0 endpoint.
             var gOauth2Params = {
-                method:'get',
+                 method:'get',
                 'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
                 'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
                 'response_type': 'token',
                 'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
                 'include_granted_scopes': 'true',
-                'state': 'gOAuthTokenRecived'
+                'state': 'gOAuthTokenRecived',
+                  'mode': 'no-cors',
             };
 
-
-            const request = {
-                method: 'get',
-                headers: { 'content-type': 'application/json' },
-                body: JSON.stringify(gOauth2Params)
-            };
-
-        
             fetch(gOauth2Endpoint, gOauth2Params)
                 .then(response => response.json())
                 .then(data => {

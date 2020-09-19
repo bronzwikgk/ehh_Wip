@@ -4,7 +4,7 @@
 //https://oauth2.example.com/callback#access_token=4/P7q7W91&token_type=Bearer&expires_in=3600
 //Auth error response -
 //https://oauth2.example.com/callback#error=access_denied
-
+//https://www.oauth.com/oauth2-servers/single-page-apps/
 
 
 https://bronzwikgk.github.io/ehh_Wip/
