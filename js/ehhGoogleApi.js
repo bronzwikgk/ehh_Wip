@@ -7,12 +7,12 @@
 //https://www.oauth.com/oauth2-servers/single-page-apps/
 //https://developer.byu.edu/docs/consume-api/use-api/oauth-20/oauth-20-javascript-sample-code
 
-https://bronzwikgk.github.io/ehh_Wip/
-#state = try_sample_request
-    & access_token=ya29.a0AfH6SMBGDaLCAc7Gee0rcPnuKweeUThNzAQyz7bq - A0gM141jOION9aXPo89PIDb7le1olhTUlff3bO2fiVJaHJn5iq3cfN - aj1WU3xC3Zzv8ZPnNNu6hPOzQDqRB0UyxJ5KqlTVDtb139fd2023kWrkPXQfedyUoCN9
-    & token_type=Bearer
-    & expires_in=3599
-        & scope=https://www.googleapis.com/auth/drive.metadata.readonly
+// https://bronzwikgk.github.io/ehh_Wip/
+// #state = try_sample_request
+//     & access_token=ya29.a0AfH6SMBGDaLCAc7Gee0rcPnuKweeUThNzAQyz7bq - A0gM141jOION9aXPo89PIDb7le1olhTUlff3bO2fiVJaHJn5iq3cfN - aj1WU3xC3Zzv8ZPnNNu6hPOzQDqRB0UyxJ5KqlTVDtb139fd2023kWrkPXQfedyUoCN9
+//     & token_type=Bearer
+//     & expires_in=3599
+//         & scope=https://www.googleapis.com/auth/drive.metadata.readonly
 
 
 /*
@@ -21,14 +21,13 @@ https://bronzwikgk.github.io/ehh_Wip/
 function oauth2SignIn() {
     // Google's OAuth 2.0 endpoint for requesting an access token
     var url = 'https://accounts.google.com/o/oauth2/v2/auth'; //oauth2Endpoint
-
     // Create element to open OAuth 2.0 endpoint in new window.
     var form = document.createElement('form');
-    form.setAttribute('method', 'GET'); // Send as a GET request.
+    form.setAttribute('method', 'GET'); 
     form.setAttribute('action', url);
-
     // Parameters to pass to OAuth 2.0 endpoint.
     var params = {
+      
         'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
         'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
         'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',

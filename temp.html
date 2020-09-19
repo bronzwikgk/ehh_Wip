@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script>
+        function loadNewDoc() {
+           var loc = window.location;
+           console.log(loc);
+            console.log("loc.hostname", loc.hostname);
+            console.log("loc.port", loc.port);
+            console.log("loc.pathname", loc.pathname);
+            console.log("loc.search", loc.search);
+             
+        // window.location = loc.hostname + loc.port + loc.pathname + loc.search;
+        };
+    </script>
+</head>
+
+<body onLoad="loadNewDoc()">
+</body>
+
+</html>

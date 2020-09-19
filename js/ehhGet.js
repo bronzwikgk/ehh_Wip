@@ -1,4 +1,4 @@
-https://stackoverflow.com/questions/9979172/difference-between-node-object-and-element-object#:~:text=5%20Answers&text=A%20node%20is%20the%20generic,such%20as%20document%20or%20document.&text=An%20element%20is%20one%20specific,%2C%20etc...).//
+//https://stackoverflow.com/questions/9979172/difference-between-node-object-and-element-object#:~:text=5%20Answers&text=A%20node%20is%20the%20generic,such%20as%20document%20or%20document.&text=An%20element%20is%20one%20specific,%2C%20etc...).//
 let i = 0;
 nodeOut = {};
 console.log(i, nodeOut); i++;
