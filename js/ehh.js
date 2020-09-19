@@ -13,9 +13,11 @@ function OnLoad(e) {
 
 
 
+
+
 function onLocationChange(e) {
 
-  //  console.log("detetced location Change", document.location);
+  ///  console.log("detetced location Change", document.location);
     if (document.location.hash) {
         //console.log("it's a hash Change", document.location.hash.substring(1));
         return document.location.hash.substring(1);
