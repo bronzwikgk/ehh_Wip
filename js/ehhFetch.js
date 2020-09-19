@@ -42,13 +42,13 @@ fetch('http://fed17.herokuapp.com/todos')
  * object. Here we can supply which method, headers and what data to send (body). The
  * body must be in the form of JSON. This can easily be done with `JSON.stringify`
  */
-const postOptions = {
+const request = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ text: 'Buy a house', complete: false })
 };
 
-fetch('http://fed17.herokuapp.com/todos/1', postOptions);
+fetch('http://fed17.herokuapp.com/todos/1', request);
 
 
 /*******************
@@ -62,7 +62,7 @@ fetch('http://fed17.herokuapp.com/todos/1', postOptions);
  * it to a user. 
  */
 
-fetch('http://fed17.herokuapp.com/todos')
+fetch('http://fed17.herokuapp.com/todos/1', request)
     .then(function (response) {
         return response.json();
     })
