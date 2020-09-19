@@ -5,21 +5,19 @@ function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
   //  var listeners = createListeners(this);
-    onhashchange();
-    handleHashChange();
-}
-
-window.onloadeddata = handleHashChange();
-
-function handleHashChange(e) {
-    console.log("reched",document.location);
-
+    onHashChange();
 }
 
 
-window.addEventListener("hashchange", onhashchange);
 
-function onhashchange() { 
+function onHashChange(e) {
+
+    console.log("detetced hash Change", document.location.hash);
+
+}
+
+
+function onhashchange2() { 
     console.log("detetced hash Change", document.location);
     var loc = window.location;
     console.log(loc);
