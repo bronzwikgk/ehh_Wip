@@ -7,13 +7,15 @@ function OnLoad(e) {
   //  var listeners = createListeners(this);
     var response = onLocationChange();
     console.log(response);
+    var token = getToken(response);
+    console.log(token);
 }
 
 
 
 function onLocationChange(e) {
 
-    console.log("detetced location Change", document.location);
+  //  console.log("detetced location Change", document.location);
     if (document.location.hash) {
         //console.log("it's a hash Change", document.location.hash.substring(1));
         return document.location.hash.substring(1);
@@ -29,7 +31,8 @@ function onLocationChange(e) {
 // Returns the token from the URL hash
 function getToken() {
     //substring(1) to remove the '#'
-    hash = parseParms(document.location.hash.substring(1));
+    response = parseParms(document.location.hash.substring(1));
+    console.log(response);
     return hash.access_token;
 }
 
@@ -42,9 +45,11 @@ function parseParms(str) {
         parts = pieces[i].split("=");
         if (parts.length < 2) {
             parts.push("");
+            console.log(parts);
         }
         data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
     }
+    console.log(data);
     return data;
 }
 

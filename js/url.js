@@ -8,6 +8,14 @@ function buildEncodedUri(request) {
     return response.join('&');
 }
 
+
+function unbuildEndodedUri(request) { 
+
+
+
+
+    
+}
 //options with map
 function encodeData(data) {
     return Object.keys(data).map(function (key) {
