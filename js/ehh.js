@@ -5,6 +5,8 @@ function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
     var listeners = createListeners(this);
+    onhashchange();
+    handleHashChange();
 }
 
 window.onloadeddata = handleHashChange;
