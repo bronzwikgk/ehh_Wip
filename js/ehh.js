@@ -5,8 +5,29 @@ function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
     var listeners = createListeners(this);
+    
+   
+   
+
+}
+window.addEventListener("hashchange", onhashchange);
+
+function onhashchange() { 
+    console.log("detetced hash Change", document.location);
+    var loc = window.location;
+    console.log(loc);
+    console.log("loc.hostname", loc.hostname);
+    console.log("loc.port", loc.port);
+    console.log("loc.pathname", loc.pathname);
+    console.log("loc.search", loc.search);
+
+    if (document.location) { 
+        
+        console.log("detetced hash Change", document.location);
+        
+    }
     var token = getToken();
-    console.log("token",token);
+    console.log("token", token);
     var fragmentString = window.location.hash.substring(1);
 
     console.log("fragmentString", fragmentString);
@@ -17,7 +38,7 @@ function OnLoad(e) {
         params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
     }
     if (Object.keys(params).length > 0) {
-       // localStorage.setItem('oauth2-test-params', JSON.stringify(params));
+        // localStorage.setItem('oauth2-test-params', JSON.stringify(params));
         if (params['state'] && params['state'] == 'try_sample_request') {
             console.log("fragmentStringaa", fragmentString);
         }
@@ -25,7 +46,6 @@ function OnLoad(e) {
 
 
 }
-
 
 // Returns the token from the URL hash
 function getToken() {
