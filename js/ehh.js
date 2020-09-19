@@ -1,10 +1,28 @@
 //string, number, bigint, boolean, symbol, null and undefined
 window.onload = OnLoad();
-console.log(window.navigator);
+console.log("uo",window.navigator);
 function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
     var listeners = createListeners(this);
+
+    var fragmentString = window.location.hash.substring(1);
+
+    console.log("fragmentString", fragmentString);
+    // Parse query string to see if page request is coming from OAuth 2.0 server.
+    var params = {};
+    var regex = /([^&=]+)=([^&]*)/g, m;
+    while (m = regex.exec(fragmentString)) {
+        params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+    if (Object.keys(params).length > 0) {
+       // localStorage.setItem('oauth2-test-params', JSON.stringify(params));
+        if (params['state'] && params['state'] == 'try_sample_request') {
+            console.log("fragmentStringaa", fragmentString);
+        }
+    }
+
+
 }
 
 function createListeners(entity) {

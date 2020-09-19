@@ -1,39 +1,12 @@
 <html>
 
 
-<head></head>
+<head>
+    <script type="text/javascript" src="js/ehhGoogleApiV2.js"></script>
+</head>
 
 <body>
-    <script>
-        function httpRequest() {
-                var request = new XMLHttpRequest();
-                var url = 'https://accounts.google.com/o/oauth2/v2/auth';
-                var gOauth2Params = {
-                    'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
-                    'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
-                    'response_type': 'token',
-                    'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
-                    'include_granted_scopes': 'true',
-                    'state': 'gOAuthTokenRecived',
-                    'mode': 'no-cors',
-            };
-                request.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("demo").innerHTML =
-                            this.responseText;
-                    }
-                };
-                request.open("GET", url, true);
-                // set `Content-Type` header
-           request.setRequestHeader('Content-Type', 'application/json');
-                request.send(JSON.stringify(gOauth2Params));
-            }
-   
-
-
-    </script>
-
-    <button onclick="httpRequest();">getSheetToken</button>
+<button onclick="oauth2SignIn();">getSheetToken</button>
 </body>
 
 </html>

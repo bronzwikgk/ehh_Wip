@@ -1,5 +1,5 @@
 
-const API_KEY = 'AIzaSyAdLftMrzdgpN-G9KRrw_AA3I9i1K3IRu0';
+
 const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 const SPREADSHEET_ID = "1Oh8naEHOWDl9gmRZiR1Pl621n-s4Ri04iWguEYS7dUo";
 const SPREADSHEET_TAB_NAME = "Sheet2";
@@ -92,23 +92,5 @@ function appendPre(message) {
     var pre = document.getElementById('content');
     var textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
-}
-
-/**
- * Print all Labels in the authorized user's inbox. If no labels
- * are found an appropriate message is printed.
- */
-function listLabels() {
-    eval("gapi.client.gmail.users.labels.list({'userId': 'me' }).then(function(response) {var labels = response.result.labels;appendPre('Labels:');if (labels && labels.length > 0) {for (i = 0; i < labels.length; i++) { var label = labels[i]; appendPre(label.name) } } else { appendPre('No Labels found.');}});")
-
-    var url = "https://gmail.googleapis.com/$discovery/rest?version=v1";
-    var content = fetch(url);
-    var discovery = JSON.parse(content);
-
-    for (var name in discovery.resources) {
-
-        console.log(name)
-    }
-
 }
 
