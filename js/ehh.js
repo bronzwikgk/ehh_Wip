@@ -4,14 +4,15 @@ console.log("uo",window.navigator);
 function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
-    var listeners = createListeners(this);
+  //  var listeners = createListeners(this);
     onhashchange();
     handleHashChange();
 }
 
-window.onloadeddata = handleHashChange;
+window.onloadeddata = handleHashChange();
+
 function handleHashChange(e) {
-    console.log(e.location);
+    console.log("reched",document.location);
 
 }
 
@@ -157,11 +158,12 @@ function conductEvent(e) {
 
 function onEvent(e) {
    // console.log(e.constructor.name, e.type, "captured", e.target.tagName);
-    if (e.type === "pageshow") {
-        //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
-       initState(e);
-        // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
-    } if (e.constructor.name === "MouseEvent") {
+    // if (e.type === "pageshow") {
+    //     //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
+    //  //  initState(e);
+    //     // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
+    // }
+    if (e.constructor.name === "MouseEvent") {
         //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
         changeState(e);
         // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
