@@ -1,19 +1,19 @@
 <html>
-<script type="text/javascript" src="js/ehhGoogleApi.js"></script>
+
 
 <head></head>
 
 <body>
     <script>
        
-
         function getOauth2Token() {
-            console.log(arguments.callee.name);
+          //  console.log(arguments.callee.name);
             // Google's OAuth 2.0 endpoint for requesting an access token
             var gOauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
 
             // Parameters to pass to OAuth 2.0 endpoint.
             var gOauth2Params = {
+                method:'get',
                 'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
                 'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
                 'response_type': 'token',
@@ -29,18 +29,13 @@
                 body: JSON.stringify(gOauth2Params)
             };
 
-         
-
-
+        
             fetch(gOauth2Endpoint, gOauth2Params)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data) // Prints result from `response.json()` in getRequest
                 })
                 .catch(error => console.error(error))
-
-            
-
 
         }
 
