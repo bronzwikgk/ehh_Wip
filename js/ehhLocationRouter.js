@@ -28,7 +28,10 @@ function onLocationChange(e) {
 
 
 function conductRoute(route){
-    console.log("route",route);
+    
+    if(route.hasOwnproperty("state")){
+        console.log("route",route);
+    }
     var routeHref = window.location.href;
     
     const pathNameSplit = window.location.pathname.split('/');
