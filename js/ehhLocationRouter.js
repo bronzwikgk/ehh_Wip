@@ -28,9 +28,9 @@ function onLocationChange(e) {
 
 
 function conductRoute(route){
-    
-    if(route.hasOwnproperty('state')){
-        console.log("route",route);
+    console.log("route",route);
+    if(route.state){
+        console.log("route",route.state);
     }
     var routeHref = window.location.href;
     

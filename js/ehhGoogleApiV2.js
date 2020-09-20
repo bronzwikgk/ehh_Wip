@@ -15,6 +15,23 @@
 //         & scope=https://www.googleapis.com/auth/drive.metadata.readonly
 //a
 
+function testOAuth2() { 
+    var params = {
+        'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
+        'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
+        'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+        'state': 'accessTokenRecived',
+        'include_granted_scopes': 'true',
+        'response_type': 'token'
+    };
+    var uri = buildEncodedUri(params);
+    //var url = 'https://accounts.google.com/o/oauth2/v2/auth?'; 
+    var url = 'http://127.0.0.1:5500/index.html#'; 
+    var service = url + uri;
+    gotoService(service)   
+}
+
+
 function testOAuth() { 
     var params = {
         'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
