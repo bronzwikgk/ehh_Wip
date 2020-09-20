@@ -32,6 +32,30 @@ function testOAuth2() {
 }
 
 
+
+var gServices={
+
+    'auth': {
+        'url' :'https://accounts.google.com/o/oauth2/v2/auth?',
+        'params':{
+            'method':'get',
+            'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
+            'redirect_uri': 'https://bronzwikgk.github.io/ehh_Wip/',
+            'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+            'state': 'accessTokenRecived',
+            'include_granted_scopes': 'true',
+            'response_type': 'token'
+        }
+    },
+    'sheets': {
+        'baseUrl' :'https://sheets.googleapis.com/v4/spreadsheets',
+        'params':{
+            'method':'get', //create//batchUpdate
+            'sheet_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
+            'access_token':'access_token'
+        }
+    },
+}
 function testOAuth() { 
     var params = {
         'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
@@ -81,10 +105,3 @@ function oauth2SignIn() {
     document.body.appendChild(form);
     form.submit();
 }
-
-// If there's an access token, try an API request.
-        // Otherwise, start OAuth 2.0 flow.
-        function trySampleRequest() {
-           
-        }
-

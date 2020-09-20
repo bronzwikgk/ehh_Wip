@@ -29,8 +29,8 @@ function conductRoute(route){
     
     if(route.state && route.expires_in && route.token_type){
         console.log("route",route.state,route.token_type);
-var url='https://www.googleapis.com/drive/v3/about?fields=user&';
-        getHttpRequest(url,route);
+            var url='https://www.googleapis.com/drive/v3/about?fields=user&';
+        getHttpfetchRequest(url,route);
     }
 
 
