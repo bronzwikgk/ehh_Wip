@@ -6,27 +6,7 @@ function OnLoad(e) {
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
   //  var listeners = createListeners(this);
     var response = onLocationChange();
-    console.log(response);
-    var token = unbuildEndodedUri(response);
-    console.log("token",token);
-}
-
-
-
-
-
-function onLocationChange(e) {
-
-  ///  console.log("detetced location Change", document.location);
-    if (document.location.hash) {
-        //console.log("it's a hash Change", document.location.hash.substring(1));
-        return document.location.hash.substring(1);
-    } else if (document.location.search) {
-        //console.log("it's a search Change", document.location.search.substring(1));
-        return document.location.search.substring(1);
-    } else { 
-        console.log("no idea");
-    }
+    
 }
 
 

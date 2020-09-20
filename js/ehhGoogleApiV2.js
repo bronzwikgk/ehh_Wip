@@ -26,10 +26,9 @@ function testOAuth() {
     };
     var uri = buildEncodedUri(params);
     var url = 'https://accounts.google.com/o/oauth2/v2/auth?'; 
+    //var url = 'http://127.0.0.1:5500/index.html'; 
     var service = url + uri;
-    window.location.href = service;
-  
-    
+    gotoService(service)   
 }
 
 
