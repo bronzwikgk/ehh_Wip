@@ -29,8 +29,8 @@ function onLocationChange(e) {
 
 function conductRoute(route){
     console.log("route",route);
-    if(route.state){
-        console.log("route",route.state);
+    if(route.state && route.expires_in && route.token_type){
+        console.log("route",route.state,route.token_type);
     }
     var routeHref = window.location.href;
     
