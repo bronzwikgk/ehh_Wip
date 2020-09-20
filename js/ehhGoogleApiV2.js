@@ -82,5 +82,9 @@ function oauth2SignIn() {
     form.submit();
 }
 
-
+// If there's an access token, try an API request.
+        // Otherwise, start OAuth 2.0 flow.
+        function trySampleRequest() {
+           
+        }
 
