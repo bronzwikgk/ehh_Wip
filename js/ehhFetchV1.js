@@ -21,9 +21,10 @@ function XMLHttpRequest(url,request){
 }
 
 function fetchHttpRequest(url, request) {
-    console.log("making a req", request);
+    console.log("making a req",url, request);
+    var fetchUrl = url + 'access_token=' + request['access_token'];
     if (request && request['access_token']) {
-        fetch('GET', url + 'access_token=' + request['access_token'])
+        fetch('GET', fetchUrl)
             .then(function (response) { return response.json(); })
             .then(function (jsonData) { console.log(jsonData); })
             .catch(function (error) { console.log(error); });
