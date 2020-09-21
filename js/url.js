@@ -17,11 +17,10 @@ function unbuildEndodedUri(request) {
         }
         data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
     }
-    console.log(data);
-    return data;
-
-
     
+    console.log("Returning from", arguments.callee.name, data);
+    
+    return data;    
 }
 //options with map
 function encodeData(data) {

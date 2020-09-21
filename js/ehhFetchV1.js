@@ -23,15 +23,13 @@ function getHttpRequest(url,request){
 
 function fetchRequest(url,request){
 fetch(url, request)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (jsonData) {
-        console.log(jsonData);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+    .then(function (response) {return response.json();})
+    .then(function (jsonData) {console.log(jsonData);})
+    .catch(function (error) {console.log(error);});
+}
+
+
+
 
 
     // fetch(url,request)
@@ -40,12 +38,4 @@ fetch(url, request)
     //     console.log(data) // Prints result from `response.json()` in getRequest
     // })
     // .catch(error => console.error(error))
-
-
-
-
-
-
-}
-
 

@@ -30,7 +30,7 @@ function conductRoute(route){
     if(route.state && route.expires_in && route.token_type){
         console.log("route",route.state,route.token_type);
             var url='https://www.googleapis.com/drive/v3/about?fields=user&';
-        getHttpfetchRequest(url,route);
+        getHttpRequest(url,route);
     }
 
 
@@ -38,11 +38,11 @@ function conductRoute(route){
     
     const pathNameSplit = window.location.pathname.split('/');
     
-    console.log(pathNameSplit);
+   // console.log(pathNameSplit);
     
     const pathSegments = pathNameSplit.length > 1 ? pathNameSplit.slice(1) : '';
     
-    console.log(pathSegments);
+  //  console.log(pathSegments);
 
 
 
