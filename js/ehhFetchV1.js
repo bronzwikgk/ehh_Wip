@@ -1,6 +1,5 @@
 
 function getHttpRequest(url,request){
-
     console.log("making a req",request);
     if (request && request['access_token']) {
         var xhr = new XMLHttpRequest();
