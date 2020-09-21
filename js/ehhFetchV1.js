@@ -1,5 +1,5 @@
 
-function getHttpRequest(url,request){
+function XMLHttpRequest(url,request){
     console.log("making a req",request);
     if (request && request['access_token']) {
         var xhr = new XMLHttpRequest();
@@ -17,6 +17,17 @@ function getHttpRequest(url,request){
         testOAuth();
     }
 
+
+}
+
+function fetchHttpRequest(url, request) {
+    console.log("making a req", request);
+    if (request && request['access_token']) {
+        fetch('GET', url + 'access_token=' + request['access_token'])
+            .then(function (response) { return response.json(); })
+            .then(function (jsonData) { console.log(jsonData); })
+            .catch(function (error) { console.log(error); });
+      
 
 }
 
