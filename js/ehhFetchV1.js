@@ -24,7 +24,7 @@ function fetchHttpRequest(url, request) {
     console.log("making a req",url, request);
     var fetchUrl = url + 'access_token=' + request['access_token'];
     if (request && request['access_token']) {
-        fetch(fetchUrl, 'GET')
+        fetch(fetchUrl, {method:'GET'})
             .then(function (response) { return response.json(); })
             .then(function (jsonData) { console.log(jsonData); })
             .catch(function (error) { console.log(error); });
