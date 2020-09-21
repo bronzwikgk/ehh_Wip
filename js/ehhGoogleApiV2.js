@@ -35,7 +35,7 @@ function testOAuth2() {
 
 
 
-var gServices={
+var gServices = {
 
     'auth': {
         'url' :'https://accounts.google.com/o/oauth2/v2/auth?',
@@ -58,6 +58,8 @@ var gServices={
         }
     },
 }
+
+
 function testOAuth() { 
     var params = {
         'client_id': '385607167966-u90ri3n5qkapcuq8gmhheg781qr7jbkp.apps.googleusercontent.com',
