@@ -18,10 +18,14 @@ function onLocationChange(e) {
           console.log("no idea");
       }
       //console.log(response);
-      var route = unbuildEndodedUri(response);
+    if (response) { 
+        var route = unbuildEndodedUri(response);
+        conductRoute(route);
+    }
+      
       //console.log("token",route);
 
-  conductRoute(route);
+  
 }
 
 function conductRoute(route){
