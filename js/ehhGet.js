@@ -50,7 +50,7 @@ var request = {
 var temp = getElement(entity);
 console.log("temp",temp);
 var output = processRequest(entity, request, output, true);
-console.log(JSON.stringify(output));
+console.log(output);
 
 
 //this function takes a request [ entity | string ], and for each key in request processes it.
