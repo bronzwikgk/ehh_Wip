@@ -11,7 +11,7 @@ function OnLoad(e) {
 
 
 function createListeners(entity) {
-   console.log(entity);
+  // console.log(entity);
     var events = find(entity, 'on');
   // console.log("events Found",events);
     var a = events.forEach(create);

@@ -2,15 +2,16 @@
 //http://stevehanov.ca/blog/index.php?id=120
 
 document.onkeyup = handleKeyup;
-
+var lastKey;
 let searchDictionary = new Set();
-let keyInput = new Map();
-keyInput.set('keyUpEvent', 'kjhg');
+let activeKeyInputs = new Map();
+activeKeyInputs.set('keyUpEvent', "");
 let wordInput = new Map();
 let sentenceInput = new Map();
 let paraInput = new Set();
 let currentWord = new Map();
-save(keyInput, 'activeKeyInput');
+console.log("saving",activeKeyInputs.get('keyUpEvent'), 'activeKeyInputs');
+save(activeKeyInputs.get('keyUpEvent'), 'activeKeyInputs');
  // we are only interested in alphanumeric keys
 searchDictionary.add('searchKey', 'abc789');
 searchDictionary.add('closureSet', 'whenThis', 'Addthis','rightNextToit');
@@ -20,15 +21,19 @@ searchDictionary.add('closureSet', '[', ']');
 
 console.log(searchDictionary);
 
+
 function handleKeyup(e) { 
- //   console.log(arguments.callee.name);
+    //console.log(arguments.callee.name);
    //console.log(searchDictionary);
-    var lastKey = keyInput.get('keyUpEvent');
+    var lastKey = activeKeyInputs.get('keyUpEvent');
+    console.log("last key pressed",lastKey);
     var currentKey = e.key;
     console.log("curre", currentKey);
-    
-    currentWord.push(currentKey);
+    newMapKey = currentKey.concat(lastKey)
+    activeKeyInputs.set('keyUpEvent', newMapKey);
+    save(activeKeyInputs.get('keyUpEvent'), 'activeKeyInputs');
     save('currentWord', currentWord);
+    
     var response = searchInMap(currentKey);
     if (response) { 
         console.log(response);
