@@ -35,10 +35,9 @@ function handleKeyup(e) {
     save('currentWord', currentWord);
     
     var response = searchInMap(currentKey);
-    if (response) { 
+    if (response) {
         console.log(response);
     }
-  
 }
 
 
