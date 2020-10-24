@@ -1,4 +1,10 @@
-
+//If ehh to be loaded as an App
+chrome.app.runtime.onLaunched.addListener(function(launchData) {
+    chrome.app.window.create('index.html', {id:"fileWin", innerBounds: {width: 800, height: 500}}, function(win) {
+      win.contentWindow.launchData = launchData;
+    });
+  });
+  
 
 const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 const SPREADSHEET_ID = "1Oh8naEHOWDl9gmRZiR1Pl621n-s4Ri04iWguEYS7dUo";
