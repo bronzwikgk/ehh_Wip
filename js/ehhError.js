@@ -1,4 +1,5 @@
 // A simple error handler to be used throughout this demo.
+//https://httpstatuses.com/
 function errorHandler(error) {
     var message = '';
 
