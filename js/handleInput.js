@@ -18,7 +18,6 @@ searchDictionary.add('closureSet', 'whenThis', 'Addthis','rightNextToit');
 searchDictionary.add('closureSet', '{', '}');
 searchDictionary.add('closureSet', '(', ')');
 searchDictionary.add('closureSet', '[', ']');
-
 console.log(searchDictionary);
 
 
