@@ -27,9 +27,6 @@ function errorHandler(error) {
     console.log(message);
 }
 
-
-
-
 /**
  * @enum {string} All error messages from messages.json
  */

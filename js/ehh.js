@@ -33,7 +33,6 @@ function initState(e) {
     let i = 0;
     document.documentElement.querySelectorAll('*').forEach(function (node) {
         node.setAttribute("currentstate", "inDom"); node.setAttribute("prevstate", "intiated");
-       
         if (!node.hasAttribute("ehhId")) { 
           //  console.log(i,i++,"ehhId",);
             node.setAttribute("ehhId", "ehhId" + i); i++;
