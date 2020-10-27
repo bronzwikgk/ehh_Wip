@@ -1,5 +1,4 @@
 
-
 function setAttr() {
     var value = document.getElementById('searchBar').value;
     if (value.length >= 1) {
@@ -25,19 +24,12 @@ function setAttr() {
 //     };
 // })(XMLHttpRequest.prototype.open)
 
-
-
-
 var chosenEntry = null;
 var chooseFileButton = document.querySelector('#choose_file');
 var chooseDirButton = document.querySelector('#choose_dir');
 var saveFileButton = document.querySelector('#save_file');
 var output = document.querySelector('output');
 var textarea = document.querySelector('textarea');
-
-
-
-
 
 chooseFileButton.addEventListener('click', function(e) {
     var accepts = [{
