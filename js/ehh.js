@@ -8,8 +8,6 @@ function OnLoad(e) {
     var response = onLocationChange();
     
 }
-
-
 function createListeners(entity) {
   // console.log(entity);
     var events = find(entity, 'on');

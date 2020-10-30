@@ -4,7 +4,9 @@
         // console.log("iterating", entity, checkEntity(entity));//, entity.children.length
         if (entity.childNodes) {
             var entityChildList = entity.childNodes;
-            //console.log("haschild",entityChildList);
+           return entityChildList; //console.log("haschild",entityChildList);
+        } else{
+            return false;
         }
 
     }
