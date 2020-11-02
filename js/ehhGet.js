@@ -27,14 +27,10 @@ var request = {
         'name': "get",
         'nodeType': "get",
         'id': "get",
-        "validity": "",
         "attributes": "",
-        "style": "",
         "childNodes": "",
         "CSSRuleSelector": "",
-        "children": "",
-        "dataset": "",
-        "classList": "",
+        "children": ""
         
  },
     'options': {
@@ -55,6 +51,7 @@ console.log(output);
 
 //this function takes a request [ entity | string ], and for each key in request processes it.
 function processRequest(entity, request, output, values) { //Entity to be part of Request Json
+    
     if (!response) { var response = {};}
 
     var eip = document.getElementsByTagName(entity)[0];
@@ -163,4 +160,60 @@ function getElement(entity, output) {
 //Get||Set||Update||Delete||Match|Find||
 function exeOnEachEntity() { 
 
+}
+
+
+function iterateObj(obj, nodeOut, recurse, nextSw) {
+    if (!response) { var response = {}; }
+    sw = arguments.callee.name;
+    //  console.log(i, sw, obj, getEntityType(obj), obj.nodeType); i++;
+    for (let key in obj) {
+        if (obj[key]) {
+            // response[key] = obj[key];
+            //console.log(i, key, obj[key]); i++;
+            if (obj.hasOwnProperty(key) || typeof obj[key] != 'function' ) {//In case we need to recurse
+                // console.log("obj found >>", key, obj[key], getEntityType(obj[key]), obj[key].nodeType,typeof obj[key]);
+                //iterateEntity(obj, obj[key], nodeOut);
+                response[key] = obj[key];
+           
+                // console.log(i, key, obj[key]); i++;
+            }
+        }
+    }
+    //  console.log(response);
+    return response;
+}
+
+
+function conductIteration(entity, output, input, sw, keytoFind, itemLength, iteratorResponse) {
+    sw = arguments.callee.name;
+    // console.log(i,sw, entity, getEntityType(entity), itemLength, entity.nodeType);i++
+    if (entity) {
+        if (getEntityType(entity).includes("Element")) {
+            // console.log(i, "entity is ", getEntityType(entity)); i++;
+
+            var response = iterateObj(entity, output, false, sw);
+
+
+        } else if (getEntityType(entity).includes("List")) {
+            console.log("Listentity is ", getEntityType(entity));
+            iterateArr(entity);
+        } else if (getEntityType(entity) === 'object') {
+            console.log("Objectentity is ", getEntityType(entity));
+            iterateObj(entity, output);
+        } else if (getEntityType(entity) === 'function') {
+            console.log("entity is ", getEntityType(key));
+        } else if (isArray(entity)) {
+            console.log("entity is ", getEntityType(entity));
+            iterateArr();
+        } else if (getEntityType(entity).includes("Collection")) {
+            console.log("entity is ", entity.__proto__.constructor.name);
+            iterateArr(entity);
+        } else {
+            console.log("Other type of entity", entity);
+        }
+
+
+    }
+    return response;
 }
