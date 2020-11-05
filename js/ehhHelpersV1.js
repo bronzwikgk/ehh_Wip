@@ -1,6 +1,6 @@
 //helper Functions
 {
-    
+   //https://stackoverflow.com/questions/3710204/how-to-check-if-a-string-is-a-valid-json-string-in-javascript-without-using-try 
 // var validjsontext = '{"firstnam":"James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}'; 
 // var invalidjsontext = '{"firstnam""James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}'; 
 // console.log("With Valid JSON Text: "+IsValidJSONString(validjsontext));
