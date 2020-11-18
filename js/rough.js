@@ -152,30 +152,7 @@ const waterfall = function (promises) {
 };
 
 
-async function fetchText() {
 
-    let response = await fetch('/readme.txt');
-
-    console.log(response.status); // 200
-    console.log(response.statusText); // OK
-
-    if (response.status === 200) {
-        let data = await response.text();
-        // handle data
-    }
-}
-
-fetchText();
-
-
-async function fetchUrl(url) {
-    try {
-        let res = await fetch(url);
-        return await res.json();
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 
 function onhashchange2() {
