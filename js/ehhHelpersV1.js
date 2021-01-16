@@ -1,10 +1,29 @@
 //helper Functions
 {
+   //https://stackoverflow.com/questions/3710204/how-to-check-if-a-string-is-a-valid-json-string-in-javascript-without-using-try 
+// var validjsontext = '{"firstnam":"James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}'; 
+// var invalidjsontext = '{"firstnam""James","surname":"Bond","mobile":["007-700-007","001-007-007-0007"]}'; 
+// console.log("With Valid JSON Text: "+IsValidJSONString(validjsontext));
+// console.log("With inValid JSON Text: "+IsValidJSONString(invalidjsontext));
+function IsValidJSONString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+
+
+
     function hasChild(entity) {
         // console.log("iterating", entity, checkEntity(entity));//, entity.children.length
         if (entity.childNodes) {
             var entityChildList = entity.childNodes;
-            //console.log("haschild",entityChildList);
+           return entityChildList; //console.log("haschild",entityChildList);
+        } else{
+            return false;
         }
 
     }
@@ -94,5 +113,11 @@ function FindInAn2DArray(Array, column, item) {
 
 
 
+
+
     
+
+
 }
+
+

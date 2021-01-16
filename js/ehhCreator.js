@@ -1,4 +1,6 @@
-
+//https://taniarascia.github.io/primitive/#typography
+//https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+//https://google.github.io/closure-library/source/closure/goog/demos/
 //Creates an element and passes to Append
 var ehh = {};
 

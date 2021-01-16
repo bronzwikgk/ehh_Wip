@@ -1,2 +1,7 @@
-
+Icon*
+icon*
 *.ini
+gs/Icon
+json/Icon
+.DS_Store
+debug.log

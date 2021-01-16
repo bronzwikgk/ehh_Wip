@@ -1,14 +1,15 @@
 //string, number, bigint, boolean, symbol, null and undefined
 window.onload = OnLoad();
-console.log(window.navigator);
+console.log("uo",window.navigator);
 function OnLoad(e) {
     //window storage == session storage
     console.log("ehh is running! on >>>", window.document.title, window.document.location.origin);
-    var listeners = createListeners(this);
+  //  var listeners = createListeners(this);
+    var response = onLocationChange();
+    
 }
-
 function createListeners(entity) {
-   console.log(entity);
+  // console.log(entity);
     var events = find(entity, 'on');
   // console.log("events Found",events);
     var a = events.forEach(create);
@@ -30,7 +31,6 @@ function initState(e) {
     let i = 0;
     document.documentElement.querySelectorAll('*').forEach(function (node) {
         node.setAttribute("currentstate", "inDom"); node.setAttribute("prevstate", "intiated");
-       
         if (!node.hasAttribute("ehhId")) { 
           //  console.log(i,i++,"ehhId",);
             node.setAttribute("ehhId", "ehhId" + i); i++;
@@ -88,11 +88,12 @@ function conductEvent(e) {
 
 function onEvent(e) {
    // console.log(e.constructor.name, e.type, "captured", e.target.tagName);
-    if (e.type === "pageshow") {
-        //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
-       initState(e);
-        // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
-    } if (e.constructor.name === "MouseEvent") {
+    // if (e.type === "pageshow") {
+    //     //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
+    //  //  initState(e);
+    //     // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
+    // }
+    if (e.constructor.name === "MouseEvent") {
         //console.log(e.constructor.name, e.type, "captured", e.target.tagName);
         changeState(e);
         // createElement(e); // onmousedown(e); // onmousedown(e); // console.log("body");
@@ -116,8 +117,6 @@ function rightClick(event) {
 
 
 }
-
-
 
 // for (i = 0; i < acc.length; i++) {
 //     acc[i].addEventListener("click", function () {
@@ -166,9 +165,6 @@ function click(e) {
     //     processEntity(targetElement, entity2Process, entity2Find,values,output,outputType,request,"click",itemLength);             
     // }
 }
-
-
-
 
 function mouseOver(e) {
     // console.log(e.constructor.name, e.type, "captured", e.target.constructor.name);
